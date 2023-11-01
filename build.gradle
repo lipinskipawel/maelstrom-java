@@ -1,19 +1,43 @@
 plugins {
-    id "java-library"
+    id 'java-library'
+    id 'maven-publish'
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
+group = "io.github.lipinskipawel"
+version = "0.1.0"
+description = "maelstrom-java"
+
 dependencies {
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.14.2"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.14.2"
+
     testImplementation "org.junit.jupiter:junit-jupiter-engine:5.10.0"
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.10.0"
     testImplementation "org.assertj:assertj-core:3.24.2"
 }
 
 tasks {
+    java {
+        withJavadocJar()
+        withSourcesJar()
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
     test {
         useJUnitPlatform()
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
     }
 }

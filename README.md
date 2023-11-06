@@ -1,17 +1,27 @@
 # Unofficial java client for [Maelstrom] server
 
+Example of usage can be found in [lipinskipawel/whirlpool].
+
 [Maelstrom]: https://github.com/jepsen-io/maelstrom
 
-## How to release maelstrom-java library
+[lipinskipawel/whirlpool]: https://github.com/lipinskipawel/whirlpool
 
-Release process is semi-automated. It begins by adding a tag version (e.g. `v0.1.0`) to a specific commit and assigning
-version to `version` in `build.gradle.kts`. Tagged commit will be release as a new version of library.
+## Features
 
-Next release have to be triggered manually by Github action release.
+Currently, we are supporting 3 workloads
 
-After that Github workflow will react on the release and publish library to Maven Central Repository.
+- echo
+- unique-ids
+- broadcast
+
+The rest of them are to be done
+
+- g-counter
+- kafka
+- txn-rw-register
 
 ## License
+
 This project is [MIT] licensed.
 
 [MIT]: LICENSE

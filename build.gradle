@@ -10,7 +10,7 @@ repositories {
     mavenCentral()
 }
 
-group = "io.github.lipinskipawel"
+group = "com.github.lipinskipawel"
 version = "0.1.0"
 description = "maelstrom-java"
 

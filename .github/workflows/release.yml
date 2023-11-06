@@ -29,7 +29,7 @@ jobs:
           distribution: temurin
       - run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
       - run: ./gradlew assemble
-      - run: ./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository
+      - run: ./gradlew publishToSonatype closeSonatypeStagingRepository
         env:
           ORG_GRADLE_PROJECT_version: ${{ env.VERSION }}
           ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.OSSRH_USERNAME }}

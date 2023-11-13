@@ -1,8 +1,10 @@
 package com.github.lipinskipawel.maelstrom.framework;
 
 import com.github.lipinskipawel.maelstrom.protocol.BaseWorkload;
-import com.github.lipinskipawel.maelstrom.protocol.CustomRequest;
+import com.github.lipinskipawel.maelstrom.protocol.CustomEvent;
 import com.github.lipinskipawel.maelstrom.protocol.EventType;
+
+import static com.github.lipinskipawel.maelstrom.framework.JsonSupport.writeEvent;
 
 /**
  * Every class that wishes to handle maelstrom workload must extend this class.
@@ -36,11 +38,11 @@ public abstract class EventHandler<W extends BaseWorkload> {
      * @param event event that must be sent
      * @param <C>   custom event type defined by the client
      */
-    public <C extends CustomRequest> void send(Event<C> event) {
+    public <C extends CustomEvent> void send(Event<C> event) {
         System.out.println(parse(event));
     }
 
     private String parse(Event<?> event) {
-        return JsonSupport.writeRequest(event);
+        return writeEvent(event);
     }
 }

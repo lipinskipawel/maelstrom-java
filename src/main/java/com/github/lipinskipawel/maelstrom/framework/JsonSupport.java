@@ -36,15 +36,15 @@ final class JsonSupport {
     }
 
     @SuppressWarnings("unchecked")
-    <T extends BaseWorkload> Event<T> readRequest(String request) {
+    <T extends BaseWorkload> Event<T> readEvent(String event) {
         try {
-            return mapper.readValue(request, Event.class);
+            return mapper.readValue(event, Event.class);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
     }
 
-    static String writeRequest(Event<?> event) {
+    static String writeEvent(Event<?> event) {
         try {
             return staticMapper.writeValueAsString(event);
         } catch (JsonProcessingException e) {

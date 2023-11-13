@@ -21,7 +21,7 @@ class EventDeserializerTest implements WithAssertions {
         event.src = "c2";
         event.dst = "n0";
 
-        var json = JsonSupport.writeRequest(event);
+        var json = JsonSupport.writeEvent(event);
 
         assertThat(json).isEqualTo("""
                 {
@@ -49,7 +49,7 @@ class EventDeserializerTest implements WithAssertions {
                     }
                 }""";
 
-        var event = mapper.readRequest(json);
+        var event = mapper.readEvent(json);
 
         var expected = new Event<>(new EchoOk("please-echo"));
         expected.id = 1;
@@ -73,7 +73,7 @@ class EventDeserializerTest implements WithAssertions {
                     }
                 }""";
 
-        var event = mapper.readRequest(json);
+        var event = mapper.readEvent(json);
 
         var expected = new Event<>((EchoOk) event.body);
         expected.id = 1;
@@ -97,7 +97,7 @@ class EventDeserializerTest implements WithAssertions {
                     }
                 }""";
 
-        var event = mapper.readRequest(json);
+        var event = mapper.readEvent(json);
 
         var expected = new Event<>(new EchoOk("please-echo"));
         expected.id = 1;
@@ -121,7 +121,7 @@ class EventDeserializerTest implements WithAssertions {
                     }
                 }""";
 
-        var event = mapper.readRequest(json);
+        var event = mapper.readEvent(json);
 
         EventType echoBody = (EventType) event.body;
         if (echoBody instanceof Init) {

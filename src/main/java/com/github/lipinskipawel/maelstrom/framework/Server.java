@@ -27,12 +27,12 @@ public final class Server {
     public void loop() {
         try (var scanner = new Scanner(System.in)) {
 
-            final var initRequest = scanner.nextLine();
-            handler.handle(json.readRequest(initRequest));
+            final var initEvent = scanner.nextLine();
+            handler.handle(json.readEvent(initEvent));
 
             while (scanner.hasNextLine()) {
-                final var request = scanner.nextLine();
-                handler.handle(json.readRequest(request));
+                final var event = scanner.nextLine();
+                handler.handle(json.readEvent(event));
             }
             handler.handle(createQuitEvent());
         }

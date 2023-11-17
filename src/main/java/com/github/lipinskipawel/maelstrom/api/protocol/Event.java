@@ -1,8 +1,6 @@
-package com.github.lipinskipawel.maelstrom.api.framework;
+package com.github.lipinskipawel.maelstrom.api.protocol;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.lipinskipawel.maelstrom.api.protocol.BaseWorkload;
-import com.github.lipinskipawel.maelstrom.api.protocol.EventType;
 
 import java.util.Objects;
 
@@ -31,7 +29,7 @@ public final class Event<T extends BaseWorkload> {
         return new Event<>(id, src, dest, body);
     }
 
-    <E extends EventType> Event<E> reply(E body) {
+    public <E extends EventType> Event<E> reply(E body) {
         final var response = new Event<>(body);
         response.id = this.id;
         response.src = this.dst;

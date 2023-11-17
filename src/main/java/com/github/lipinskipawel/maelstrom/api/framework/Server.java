@@ -1,12 +1,13 @@
 package com.github.lipinskipawel.maelstrom.api.framework;
 
+import com.github.lipinskipawel.maelstrom.api.protocol.Event;
 import com.github.lipinskipawel.maelstrom.api.protocol.EventType;
 import com.github.lipinskipawel.maelstrom.api.protocol.Quit;
 
 import java.util.Map;
 import java.util.Scanner;
 
-import static com.github.lipinskipawel.maelstrom.api.framework.Event.createEvent;
+import static com.github.lipinskipawel.maelstrom.api.protocol.Event.createEvent;
 import static com.github.lipinskipawel.maelstrom.internal.JsonSupport.jsonSupportRegisterCustomTypes;
 import static com.github.lipinskipawel.maelstrom.internal.JsonSupport.readEvent;
 

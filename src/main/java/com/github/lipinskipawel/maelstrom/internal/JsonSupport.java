@@ -3,7 +3,7 @@ package com.github.lipinskipawel.maelstrom.internal;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.github.lipinskipawel.maelstrom.api.framework.Event;
+import com.github.lipinskipawel.maelstrom.api.protocol.Event;
 import com.github.lipinskipawel.maelstrom.api.protocol.BaseWorkload;
 import com.github.lipinskipawel.maelstrom.api.protocol.EventType;
 import com.github.lipinskipawel.maelstrom.api.protocol.Init;

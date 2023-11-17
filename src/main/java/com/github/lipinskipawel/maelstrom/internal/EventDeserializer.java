@@ -4,13 +4,13 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.github.lipinskipawel.maelstrom.api.framework.Event;
+import com.github.lipinskipawel.maelstrom.api.protocol.Event;
 import com.github.lipinskipawel.maelstrom.api.protocol.EventType;
 
 import java.io.IOException;
 import java.util.Map;
 
-import static com.github.lipinskipawel.maelstrom.api.framework.Event.createEvent;
+import static com.github.lipinskipawel.maelstrom.api.protocol.Event.createEvent;
 
 final class EventDeserializer extends JsonDeserializer<Event<?>> {
     private final Map<String, Class<? extends EventType>> supportedTypes;

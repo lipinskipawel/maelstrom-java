@@ -1,8 +1,7 @@
 package com.github.lipinskipawel.maelstrom.api.framework;
 
 import com.github.lipinskipawel.maelstrom.api.protocol.BaseWorkload;
-import com.github.lipinskipawel.maelstrom.api.protocol.EventType;
-import com.github.lipinskipawel.maelstrom.spi.protocol.CustomEvent;
+import com.github.lipinskipawel.maelstrom.api.protocol.Event;
 
 import static com.github.lipinskipawel.maelstrom.internal.JsonSupport.writeEvent;
 
@@ -21,25 +20,13 @@ public abstract class EventHandler<W extends BaseWorkload> {
     public abstract void handle(Event<W> event);
 
     /**
-     * Replies to original event send by maelstrom cluster from {@link EventHandler#handle(Event)}. This method is
-     * mostly used to send events that are known to maelstrom cluster. Those events can be InitOk, EchOk and similar.
-     *
-     * @param originalEvent event to reply to
-     * @param responseBody  response payload
-     * @param <B>           type of response
-     */
-    public <B extends EventType> void replyAndSend(Event<W> originalEvent, B responseBody) {
-        System.out.println(parse(originalEvent.reply(responseBody)));
-    }
-
-    /**
-     * Sends an event plain event to maelstrom cluster.
+     * Sends an plain event to maelstrom cluster.
      *
      * @param event event that must be sent
-     * @param <C>   custom event type defined by the client
      */
-    public <C extends CustomEvent> void send(Event<C> event) {
+    public void send(Event<?> event) {
         System.out.println(parse(event));
+        System.out.flush();
     }
 
     private String parse(Event<?> event) {

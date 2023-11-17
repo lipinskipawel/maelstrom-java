@@ -6,10 +6,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ## Unreleased
 
+### Removed
+
+- replyAndSend method of EventHandler
+
 ### Changed
 
+- Changed package of Event
 - Restructuring packages (added api, spi and internal packages)
 - CustomRequest to CustomEvent
+
+### Added
+
+- reply method on Event
 
 ## 0.1.0 - 2023-11-06
 

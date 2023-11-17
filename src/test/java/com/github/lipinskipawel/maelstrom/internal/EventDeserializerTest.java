@@ -1,6 +1,6 @@
 package com.github.lipinskipawel.maelstrom.internal;
 
-import com.github.lipinskipawel.maelstrom.api.framework.Event;
+import com.github.lipinskipawel.maelstrom.api.protocol.Event;
 import com.github.lipinskipawel.maelstrom.api.protocol.EventType;
 import com.github.lipinskipawel.maelstrom.api.protocol.Init;
 import com.github.lipinskipawel.maelstrom.api.protocol.InitOk;
@@ -9,7 +9,7 @@ import com.github.lipinskipawel.maelstrom.api.protocol.echo.EchoOk;
 import org.assertj.core.api.WithAssertions;
 import org.junit.jupiter.api.Test;
 
-import static com.github.lipinskipawel.maelstrom.api.framework.Event.createEvent;
+import static com.github.lipinskipawel.maelstrom.api.protocol.Event.createEvent;
 import static com.github.lipinskipawel.maelstrom.internal.JsonSupport.readEvent;
 import static com.github.lipinskipawel.maelstrom.internal.JsonSupport.writeEvent;
 

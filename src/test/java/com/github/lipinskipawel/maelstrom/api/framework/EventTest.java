@@ -5,7 +5,7 @@ import com.github.lipinskipawel.maelstrom.api.protocol.broadcast.BroadcastOk;
 import org.assertj.core.api.WithAssertions;
 import org.junit.jupiter.api.Test;
 
-import static com.github.lipinskipawel.maelstrom.api.framework.Event.createEvent;
+import static com.github.lipinskipawel.maelstrom.api.protocol.Event.createEvent;
 
 final class EventTest implements WithAssertions {
 

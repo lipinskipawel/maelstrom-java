@@ -10,7 +10,7 @@ Example of usage can be found in [lipinskipawel/whirlpool].
 
 ## Features
 
-Currently, we are supporting 3 workloads
+Currently, the library is supporting 3 workloads
 
 - echo
 - unique-ids

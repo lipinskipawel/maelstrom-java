@@ -1,3 +1,5 @@
+[![Maven Central &ndash; maelstrom-java](https://img.shields.io/maven-central/v/com.github.lipinskipawel/maelstrom-java)](https://search.maven.org/artifact/com.github.lipinskipawel/maelstrom-java)
+
 # Unofficial java client for [Maelstrom] server
 
 Example of usage can be found in [lipinskipawel/whirlpool].

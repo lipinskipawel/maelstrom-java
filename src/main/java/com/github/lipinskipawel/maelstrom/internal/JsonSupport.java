@@ -3,8 +3,8 @@ package com.github.lipinskipawel.maelstrom.internal;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.github.lipinskipawel.maelstrom.api.protocol.Event;
 import com.github.lipinskipawel.maelstrom.api.protocol.BaseWorkload;
+import com.github.lipinskipawel.maelstrom.api.protocol.Event;
 import com.github.lipinskipawel.maelstrom.api.protocol.EventType;
 import com.github.lipinskipawel.maelstrom.api.protocol.Init;
 import com.github.lipinskipawel.maelstrom.api.protocol.InitOk;
@@ -72,7 +72,7 @@ public final class JsonSupport {
 
     private static ObjectMapper createObjectMapper(Map<String, Class<? extends EventType>> customTypes) {
         return new ObjectMapper().registerModule(
-                new SimpleModule().addDeserializer(Event.class, new EventDeserializer(customTypes))
+            new SimpleModule().addDeserializer(Event.class, new EventDeserializer(customTypes))
         );
     }
 }

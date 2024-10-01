@@ -5,5 +5,5 @@ import com.github.lipinskipawel.maelstrom.api.protocol.Init;
 import com.github.lipinskipawel.maelstrom.api.protocol.Quit;
 
 public sealed interface UniqueWorkload extends BaseWorkload permits Init, Quit,
-        Unique {
+    Unique {
 }

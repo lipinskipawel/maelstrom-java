@@ -5,7 +5,7 @@ import com.github.lipinskipawel.maelstrom.api.protocol.echo.EchoWorkload;
 import com.github.lipinskipawel.maelstrom.api.protocol.unique.UniqueWorkload;
 
 public sealed interface BaseWorkload permits EventType,
-        EchoWorkload, UniqueWorkload, BroadcastWorkload {
+    EchoWorkload, UniqueWorkload, BroadcastWorkload {
 
     int msgId();
 

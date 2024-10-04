@@ -12,6 +12,9 @@ import org.junit.jupiter.api.Test;
 import static com.github.lipinskipawel.maelstrom.api.protocol.Event.createEvent;
 import static com.github.lipinskipawel.maelstrom.internal.JsonSupport.readEvent;
 import static com.github.lipinskipawel.maelstrom.internal.JsonSupport.writeEvent;
+import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
+import static net.javacrumbs.jsonunit.assertj.JsonAssertions.json;
+import static net.javacrumbs.jsonunit.core.Option.IGNORING_ARRAY_ORDER;
 
 class EventDeserializerTest implements WithAssertions {
 
@@ -21,17 +24,19 @@ class EventDeserializerTest implements WithAssertions {
 
         var json = writeEvent(event);
 
-        assertThat(json).isEqualTo("""
-            {
-                "id": 1,
-                "src": "c2",
-                "dest": "n0",
-                "body": {
-                    "type": "init_ok",
-                    "msg_id": 0,
-                    "in_reply_to": 0
-                }
-            }""".replaceAll("\n", "").replaceAll(" ", ""));
+        assertThatJson(json)
+            .when(IGNORING_ARRAY_ORDER)
+            .isEqualTo(json("""
+                {
+                    "id": 1,
+                    "src": "c2",
+                    "dest": "n0",
+                    "body": {
+                        "type": "init_ok",
+                        "msg_id": 0,
+                        "in_reply_to": 0
+                    }
+                }"""));
     }
 
     @Test

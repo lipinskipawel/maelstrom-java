@@ -5,5 +5,7 @@ import com.github.lipinskipawel.maelstrom.api.protocol.Init;
 import com.github.lipinskipawel.maelstrom.api.protocol.Quit;
 import com.github.lipinskipawel.maelstrom.spi.protocol.CustomEvent;
 
-public sealed interface BroadcastWorkload extends BaseWorkload permits CustomEvent, Init, Quit, Broadcast, Read, Topology {
+public sealed interface BroadcastWorkload
+    extends BaseWorkload
+    permits CustomEvent, Init, Quit, Broadcast, Read, Topology {
 }

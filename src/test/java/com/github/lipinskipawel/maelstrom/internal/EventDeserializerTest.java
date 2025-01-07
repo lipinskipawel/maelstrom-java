@@ -9,7 +9,10 @@ import com.github.lipinskipawel.maelstrom.api.protocol.echo.EchoOk;
 import org.assertj.core.api.WithAssertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Map;
+
 import static com.github.lipinskipawel.maelstrom.api.protocol.Event.createEvent;
+import static com.github.lipinskipawel.maelstrom.internal.JsonSupport.createJsonMapper;
 import static com.github.lipinskipawel.maelstrom.internal.JsonSupport.readEvent;
 import static com.github.lipinskipawel.maelstrom.internal.JsonSupport.writeEvent;
 import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
@@ -17,6 +20,12 @@ import static net.javacrumbs.jsonunit.assertj.JsonAssertions.json;
 import static net.javacrumbs.jsonunit.core.Option.IGNORING_ARRAY_ORDER;
 
 class EventDeserializerTest implements WithAssertions {
+
+    static {
+        createJsonMapper(Map.of(
+            "echo_ok", EchoOk.class
+        ));
+    }
 
     @Test
     void should_serialize_event() {

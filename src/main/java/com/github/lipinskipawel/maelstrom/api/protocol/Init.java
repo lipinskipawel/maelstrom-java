@@ -8,7 +8,9 @@ import com.github.lipinskipawel.maelstrom.api.protocol.unique.UniqueWorkload;
 import java.util.List;
 import java.util.Objects;
 
-public final class Init extends EventType implements EchoWorkload, UniqueWorkload, BroadcastWorkload {
+public final class Init
+    extends EventType
+    implements EchoWorkload, UniqueWorkload, BroadcastWorkload {
     @JsonProperty("node_id")
     public String nodeId;
     @JsonProperty("node_ids")

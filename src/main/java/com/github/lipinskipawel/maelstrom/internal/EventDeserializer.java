@@ -28,7 +28,10 @@ final class EventDeserializer extends JsonDeserializer<Event<?>> {
         final var dst = tree.get("dest").asText();
         final var bodyNode = tree.get("body");
         final var intoType = supportedTypes.get(bodyNode.get("type").asText());
-        final var object = (EventType) bodyNode.traverse(p.getCodec()).readValueAs(intoType);
+
+        // either way is correct
+        final var object = p.getCodec().readValue(bodyNode.traverse(), intoType);
+        // final var object = (EventType) bodyNode.traverse(p.getCodec()).readValueAs(intoType);
 
         return createEvent(id, src, dst, object);
     }

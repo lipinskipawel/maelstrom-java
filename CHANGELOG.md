@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ## Unreleased
 
+### Added
+
+- New Fluent API to build server
+- Server implements Runnable interface
+
+### Changed
+
+- Rename `loop` to `run` method in Server
+- Deprecate static methods in Server
+
 ## 0.2.0 - 2023-11-20
 
 ### Removed

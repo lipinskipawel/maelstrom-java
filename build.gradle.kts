@@ -11,7 +11,7 @@ repositories {
 }
 
 group = "com.github.lipinskipawel"
-version = "0.2.0"
+version = "0.4.0"
 description = "maelstrom-java"
 
 dependencies {

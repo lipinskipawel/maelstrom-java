@@ -52,7 +52,7 @@ publishing {
                 scm {
                     connection.set("scm:git:ssh://git@github.com/lipinskipawel/maelstrom-java.git")
                     developerConnection.set("scm:git:ssh://git@github.com/lipinskipawel/maelstrom-java.git")
-                    url.set("git@github.com:lipinskipawel/maelstrom-java")
+                    url.set("https://github.com/lipinskipawel/maelstrom-java.git")
                 }
             }
         }

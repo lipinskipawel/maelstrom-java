@@ -10,8 +10,8 @@ repositories {
     mavenCentral()
 }
 
-group = "com.github.lipinskipawel"
-version = "0.4.0"
+group = "io.github.lipinskipawel"
+version = "1.0.0"
 description = "maelstrom-java"
 
 dependencies {
@@ -26,7 +26,10 @@ dependencies {
 
 nexusPublishing {
     repositories {
-        sonatype()
+        sonatype {
+            nexusUrl.set(uri("https://ossrh-staging-api.central.sonatype.com/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://central.sonatype.com/repository/maven-snapshots/"))
+        }
     }
 }
 

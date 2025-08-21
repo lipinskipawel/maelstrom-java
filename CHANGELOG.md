@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ## Unreleased
 
+### Changed
+
+- all packages are now starting with `io` instead of `com`
 
 ## 0.4.0 - 2025-01-08
 

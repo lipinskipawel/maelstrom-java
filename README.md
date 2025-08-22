@@ -1,4 +1,4 @@
-[![Maven Central &ndash; maelstrom-java](https://img.shields.io/maven-central/v/com.github.lipinskipawel/maelstrom-java)](https://search.maven.org/artifact/io.github.lipinskipawel/maelstrom-java)
+[![Maven Central Version](https://img.shields.io/maven-central/v/io.github.lipinskipawel/maelstrom-java)](https://central.sonatype.com/artifact/io.github.lipinskipawel/maelstrom-java)
 
 # Unofficial java client for [Maelstrom] server
 
